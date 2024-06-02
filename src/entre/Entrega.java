@@ -4,7 +4,7 @@ package entre;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class Entrega {
+public abstract class Entrega {
     // Atributos
     private String codEntrega;
     private int kmFim;
@@ -26,6 +26,7 @@ public class Entrega {
         
         System.out.println("Digite a quilometragem final da entrega: ");
         setKmFim(getScanner().nextInt());
+        getScanner().nextLine(); // Consome o newline
         
         System.out.println("Digite a data de entrega (no formato AAAA-MM-DD): ");
         String dataString = getScanner().next();
@@ -39,9 +40,7 @@ public class Entrega {
     }
 
     // Método abstrato para calcular o custo total da entrega
-    public double calcularCustoTotal() {
-        return calcularCustoBase(); // Como padrão, apenas o custo base é retornado
-    } 
+    public abstract double calcularCustoTotal(); 
     
     public void mostra() {
         System.out.println("Detalhes da entrega:");
@@ -107,5 +106,4 @@ public class Entrega {
     public void setScanner(Scanner scanner) {
         this.scanner = scanner;
     }
-    
 }

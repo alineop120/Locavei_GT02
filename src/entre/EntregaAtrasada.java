@@ -1,28 +1,25 @@
 package entre;
 
 import java.time.LocalDate;
-import java.util.Scanner;
 
 public class EntregaAtrasada extends Entrega {
     // Atributos
     private double taxaAtraso;
 
-    Scanner sc = new Scanner(System.in);
-
     // Construtor
     public EntregaAtrasada(String codigo, int quilometragemFinal, LocalDate dataEntrega, double taxaAtraso) {
         super(codigo, quilometragemFinal, dataEntrega);
         this.taxaAtraso = taxaAtraso;
-        super.cadastra(); // Chamando o método cadastra() da classe mãe
     }
 
-    // Métodos    
+    // Implementação do método abstrato para calcular o custo total
     @Override
     public double calcularCustoTotal() {
-        double custoBase = calcularCustoBase(); // Obtém o custo base da entrega
-        return custoBase + taxaAtraso; // Adiciona a taxa de atraso ao custo base
+        // Calcula o custo total somando o custo base com a taxa de atraso
+        return calcularCustoBase() + taxaAtraso;
     }
 
+    // Implementação do método mostra
     @Override
     public void mostra() {
         super.mostra(); // Chama o método mostra() da superclasse

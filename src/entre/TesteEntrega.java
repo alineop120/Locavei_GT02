@@ -2,6 +2,14 @@ package entre;
 
 import java.util.Scanner;
 
+/**
+ * ESCOLA TÉCNICA DE BRASÍLIA - ETB
+ * CURSO TÉCNICO DE INFORMÁTICA
+ * LINGUAGEM TÉCNICA DE PROGRAMAÇÃO 1
+ * DATA:02.06.2024
+ * @authores Aline, Gabriel Moreira, João Gabriel, Verônica
+ * DESENVOLVER DO PROJETO LOCAVEI
+ */
 public class TesteEntrega 
 {
     public static void main(String[] args) 
@@ -23,24 +31,24 @@ public class TesteEntrega
             {
                 case 1:
                     System.out.println("Entre com os dados da Entrega Regular:");
-                    EntregaRegular rg = new EntregaRegular("", 0, null, "");
+                    EntregaRegular rg = new EntregaRegular("", 0, null);
+                    rg.cadastra();
                     System.out.println("-------------------------------------------------------");
                     rg.mostra();
                     break;
                 case 2:
                     System.out.println("Entre com os dados da Entrega Atrasada:");
                     EntregaAtrasada atr = new EntregaAtrasada("", 0, null, 0);
+                    atr.cadastra();
                     System.out.println("-------------------------------------------------------");
                     atr.mostra();
                     break;
                  case 3:
                     System.out.println("Entre com os dados da Entrega com Danos:");
-                    EntregaComDanos cd = new EntregaComDanos("", 0, null);
-                    cd.cadastra();
-                    cd.setTaxaAtraso();
+                    EntregaComDanos entregaComDanos = new EntregaComDanos("", 0, null);
+                    entregaComDanos.cadastra();
                     System.out.println("-------------------------------------------------------");
-                    cd.mostra();
-                    break;
+                    entregaComDanos.mostra();
                 case 4:
                     System.out.println("-------------------------------------------------------");
                     System.out.println("\nPrograma encerrado!");

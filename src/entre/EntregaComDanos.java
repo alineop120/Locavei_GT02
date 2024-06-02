@@ -8,11 +8,12 @@ public class EntregaComDanos extends Entrega {
     private double taxaAtraso;
 
     // Scanner para entrada de dados
-    private static final Scanner sc = new Scanner(System.in);
+    private final Scanner sc;
 
     // Construtor
     public EntregaComDanos(String codigo, int quilometragemFinal, LocalDate dataEntrega) {
         super(codigo, quilometragemFinal, dataEntrega);
+        this.sc = new Scanner(System.in);
     }
 
     // Método para definir a taxa de atraso
@@ -26,6 +27,12 @@ public class EntregaComDanos extends Entrega {
         double custoBase = calcularCustoBase(); // Obtém o custo base da entrega
         double custoReparo = 100.0; // Exemplo de custo fixo de reparo
         return custoBase + custoReparo + taxaAtraso; // Adiciona a taxa de atraso ao custo total
+    }
+
+    @Override
+    public void cadastra() {
+        super.cadastra(); // Chama o método cadastra() da superclasse
+        setTaxaAtraso(); // Define a taxa de atraso
     }
 
     @Override
