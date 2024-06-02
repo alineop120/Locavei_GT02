@@ -19,10 +19,6 @@ public class Entrega {
     }
     
     // Métodos
-
-    /**
-     *
-     */
     public void cadastra() {       
         // Solicitar entrada de dados do usuário
         System.out.println("Digite o código da entrega: ");
