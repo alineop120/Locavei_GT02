@@ -14,7 +14,7 @@ public class TesteEntrega
 {
     public static void main(String[] args) 
     {
-        try (Scanner sc = new Scanner(System.in)) {
+        try(Scanner sc = new Scanner(System.in)) {
             boolean loop = true;
             
             while (loop) 
