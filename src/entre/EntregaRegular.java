@@ -19,11 +19,11 @@ public class EntregaRegular extends Entrega {
 
     // Método para mostrar informações da entrega
     @Override
-    public void mostra() {
-        super.mostra(); // Chama o método mostra() da superclasse
+    public String toString(){
         double custoBase = calcularCustoBase(); // Calcula o custo base
-        System.out.println("Custo Base: " + custoBase);
         double custoTotal = calcularCustoTotal(); // Calcula o custo total
-        System.out.println("Custo Total: " + custoTotal);
+        return(super.toStrng()+"Custo Base: " + custoBase
+                +"\nCusto Total: " + custoTotal);
     }
+    
 }

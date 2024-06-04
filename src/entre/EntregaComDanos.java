@@ -36,11 +36,10 @@ public class EntregaComDanos extends Entrega {
     }
 
     @Override
-    public void mostra() {
-        super.mostra(); // Chama o método mostra() da superclasse
+    public String toString(){
         double custoTotal = calcularCustoTotal(); // Calcula o custo total
-        System.out.println("Taxa de Atraso: " + taxaAtraso);
-        System.out.println("Custo Total: " + custoTotal);
+        return(super.toStrng()+"\nTaxa de Atraso: " + taxaAtraso
+                +"Custo Total: " + custoTotal);
     }
 
     // Getters e Setters

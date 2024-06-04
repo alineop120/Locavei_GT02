@@ -23,7 +23,6 @@ public abstract class Entrega {
         // Solicitar entrada de dados do usuário
         System.out.println("Digite o código da entrega: ");
         setCodEntrega(getScanner().nextLine());
-        
         System.out.println("Digite a quilometragem final da entrega: ");
         setKmFim(getScanner().nextInt());
         getScanner().nextLine(); // Consome o newline
@@ -39,17 +38,18 @@ public abstract class Entrega {
         return kmFim * custoPorQuilometro;
     }
 
-    // Método abstrato para calcular o custo total da entrega
+    /* Método abstrato para calcular o custo total da entrega */
     public abstract double calcularCustoTotal(); 
     
-    public void mostra() {
-        System.out.println("Detalhes da entrega:");
-        System.out.println("Código: " + getCodEntrega());
-        System.out.println("Quilometragem Final: " + getKmFim());
-        System.out.println("Data de Entrega: " + getDataEntrega());
+    @Override
+    public String toString(){
+        return("Detalhes da entrega:"
+                +"\nCódigo: " + getCodEntrega()
+                +"\nQuilometragem Final: " + getKmFim()
+                +"\nData de Entrega: " + getDataEntrega());
     }
-
-    // Getters e Setters
+    
+    /* Getters e Setters */
 
     /**
      * @return the codEntrega
@@ -105,5 +105,9 @@ public abstract class Entrega {
      */
     public void setScanner(Scanner scanner) {
         this.scanner = scanner;
+    }
+
+    String toStrng() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -19,12 +19,18 @@ public class EntregaAtrasada extends Entrega {
         return calcularCustoBase() + taxaAtraso;
     }
 
+    /*
+    Exemplo:
+    public String toString(){
+        return(super.toStrng()+"\nCOMISSÃO PRODUTIVIDADE: "+getComisProd());
+    }
+    */
+    
     // Implementação do método mostra
     @Override
-    public void mostra() {
-        super.mostra(); // Chama o método mostra() da superclasse
+    public String toString(){
         double custoTotal = calcularCustoTotal(); // Calcula o custo total
-        System.out.println("Custo Total: " + custoTotal);
+        return(super.toStrng()+"\nCusto Total: " + custoTotal);
     }
 
     // Getters e Setters

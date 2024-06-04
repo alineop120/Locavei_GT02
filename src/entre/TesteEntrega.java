@@ -34,21 +34,21 @@ public class TesteEntrega
                         EntregaRegular rg = new EntregaRegular("", 0, null);
                         rg.cadastra();
                         System.out.println("-------------------------------------------------------");
-                        rg.mostra();
+                        System.out.println(rg.toString());
                         break;
                     case 2:
                         System.out.println("Entre com os dados da Entrega Atrasada:");
                         EntregaAtrasada atr = new EntregaAtrasada("", 0, null, 0);
                         atr.cadastra();
                         System.out.println("-------------------------------------------------------");
-                        atr.mostra();
+                        System.out.println(atr.toString());
                         break;
                     case 3:
                         System.out.println("Entre com os dados da Entrega com Danos:");
-                        EntregaComDanos entregaComDanos = new EntregaComDanos("", 0, null);
-                        entregaComDanos.cadastra();
+                        EntregaComDanos cd = new EntregaComDanos("", 0, null);
+                        cd.cadastra();
                         System.out.println("-------------------------------------------------------");
-                        entregaComDanos.mostra();
+                        System.out.println(cd.toString());
                     case 4:
                         System.out.println("-------------------------------------------------------");
                         System.out.println("\nPrograma encerrado!");
