@@ -4,19 +4,14 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class EntregaComDanos extends Entrega {
-    // Atributos
     private double taxaAtraso;
-
-    // Scanner para entrada de dados
     private final Scanner sc;
 
-    // Construtor
     public EntregaComDanos(String codigo, int quilometragemFinal, LocalDate dataEntrega) {
         super(codigo, quilometragemFinal, dataEntrega);
         this.sc = new Scanner(System.in);
     }
 
-    // Método para definir a taxa de atraso
     public void setTaxaAtraso() {
         System.out.print("Taxa de Atraso: ");
         this.taxaAtraso = sc.nextDouble();
@@ -24,30 +19,31 @@ public class EntregaComDanos extends Entrega {
 
     @Override
     public double calcularCustoTotal() {
-        double custoBase = calcularCustoBase(); // Obtém o custo base da entrega
-        double custoReparo = 100.0; // Exemplo de custo fixo de reparo
-        return custoBase + custoReparo + taxaAtraso; // Adiciona a taxa de atraso ao custo total
+        double custoBase = calcularCustoBase();
+        double custoReparo = 100.0;
+        return custoBase + custoReparo + taxaAtraso;
     }
 
     @Override
     public void cadastra() {
-        super.cadastra(); // Chama o método cadastra() da superclasse
-        setTaxaAtraso(); // Define a taxa de atraso
+        super.cadastra();
+        setTaxaAtraso();
     }
 
     @Override
-    public String toString(){
-        double custoTotal = calcularCustoTotal(); // Calcula o custo total
-        return(super.toStrng()+"\nTaxa de Atraso: " + taxaAtraso
-                +"Custo Total: " + custoTotal);
+    public String toString() {
+        return super.toString() + "\nTaxa de Atraso: " + taxaAtraso + "\nCusto Total: " + calcularCustoTotal();
     }
 
-    // Getters e Setters
     public double getTaxaAtraso() {
         return taxaAtraso;
     }
 
     public void setTaxaAtraso(double taxaAtraso) {
         this.taxaAtraso = taxaAtraso;
+    }
+
+    public Scanner getSc() {
+        return sc;
     }
 }
