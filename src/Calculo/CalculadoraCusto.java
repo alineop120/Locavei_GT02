@@ -1,4 +1,4 @@
-package entre;
+package Calculo;
 
 /**
  * Classe que representa uma calculadora de custos para entregas.
